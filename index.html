@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>animate React Component with React Transition Group</title>
+    <style>
+      .app {
+        height: 4000px;
+      }
+
+      .button {
+        position: fixed;
+      }
+
+      .background {
+        background-color: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        display: block;
+        height: 100vh;
+        left: 0;
+        opacity: 1;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        transition: opacity 0.3s ease 0s;
+        width: 100vw;
+      }
+      
+      .background-transition-enter {
+        opacity: 0;
+      }
+      
+      .background-transition-enter-active {
+        opacity: 1;
+      }
+      
+      .background-transition-exit {
+        opacity: 1;
+      }
+      
+      .background-transition-exit-active {
+        opacity: 0;
+      }
+      
+      .navigation {
+        background-color: #efefef;
+        box-sizing: border-box;
+        display: block;
+        height: 100vh;
+        left: 0;
+        overflow: scroll;
+        padding: 24px;
+        position: fixed;
+        top: 0;
+        transform: translateX(0);
+        transition: transform 0.2s ease-out 0s;
+        width: 300px;
+      }
+
+      .navigation .list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .navigation .list .item {
+        margin-bottom: 10em;
+      }
+
+      .navigation .list .item:last-of-type {
+        margin-bottom: 0;
+      }
+      
+      .navigation-transition-enter {
+        transform: translateX(-100%);
+      }
+      
+      .navigation-transition-enter-active {
+        transform: translateX(0);
+      }
+      
+      .navigation-transition-exit {
+        transform: translateX(0);
+      }
+      
+      .navigation-transition-exit-active {
+        transform: translateX(-100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="js-react-root"></div>
+    <div id="js-react-menu"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.6.3/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.6.3/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react-transition-group@2.6.0/dist/react-transition-group.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
